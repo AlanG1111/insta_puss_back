@@ -7,7 +7,7 @@ export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User {
   @ApiProperty({ example: 'aaa@gmail.com', description: 'User Email' })
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   email: string;
 
   @ApiProperty({ example: 'aaa111', description: 'User Password' })
