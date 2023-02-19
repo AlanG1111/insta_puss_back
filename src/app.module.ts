@@ -11,9 +11,7 @@ import { AuthModule } from './auth/auth.module';
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
-    MongooseModule.forRoot(
-      `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.mdcfwja.mongodb.net/${process.env.MONGO_DB_NAME}`,
-    ),
+    MongooseModule.forRoot(process.env.MONGODB_CLUSTER_URL),
     UsersModule,
     AuthModule,
   ],
